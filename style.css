@@ -1,0 +1,39 @@
+.side-column {
+  display: inline-block;
+  position: relative;
+  top: 160px;
+}
+.main-column {
+  display: inline-block;
+  flex: 1;
+  position: relative;
+  top: 90px;
+}
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+}
+.inside-column-2{
+  display: grid;
+  gap: 60;
+  grid-template-columns: 1fr 1fr;
+}
+.inside-column-4{
+  display: grid;
+  gap: 60;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@keyframes myAnimation {
+  0%   {width: 0%;}
+  100%  {width: 100%;}
+}
+.progress-indicator-bar{
+  width: 00%;
+  animation-name: myAnimation;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.AnimateLoadStart
