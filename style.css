@@ -36,4 +36,6 @@
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }
-.AnimateLoadStart
+.AnimateLoadStart {
+  display: none;
+}

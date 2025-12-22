@@ -36,7 +36,7 @@
 						<center>
 						<div class="window-body">
 							<div class="status-field-border">
-								<img src="images/robert_mii.gif" alt="Robert Mii" width="250" height="250">
+								<img src="images/robert_mii.gif" alt="Robert as a Mii" width="250" height="250">
 							</div>
 						</div>
 						</center>
@@ -50,40 +50,67 @@
 							Welcome.exe
 						</div>
 						<div class="title-bar-controls">
-							<button aria-label="Help"></button> <!-- Make it so this pops up a window that explains what to do-->
+							<button onclick="DisplayHelp()" aria-label="Help"></button>
 							<button aria-label="Close"></button>
 						</div>
 					</div>
 					<center>
 					<div class="window-body" style="font-family: Times; font-size: 15px">
 							<div style="border: 10px solid rgb(192, 192, 192); width: 350px; height: 350px; outline: outset 2px rgb(219, 219, 219); left: 5px;top: 15px;"> 
-								<img src="images/robert.jpg" alt="Robert Photo" width="350" height="350">
+								<img src="images/placeholder.png" alt="Robert Photo" width="350" height="350">
 							</div>
 						<p> My name is Robert McEachron! I am a undergraduate psychology student, research assistant, and writing/statistics tutor </p>
 						<section class="field-row" style="justify-content: flex-end">
-							<a href="home.html"> <button>Enter</button> </a>
-							<button>Cancel</button>
+							<button onclick="AnimationStart()">Enter</button>
+							<button onclick="DisplayCancel()">Cancel</button>
 						</section>
 					</center>
 					</div>
-				<div class="window" style="width: 300px">
+				<div id="AnimateLoadStart" class="AnimateLoadStart" style="position: absolute; top: 300px;"> 
+					<div class="window" style="width: 300px;">							
 						<div class="title-bar">
 							<div class="title-bar-text">Loading...</div>
 						</div>
 						<div class="window-body">
 							<div class="progress-indicator segmented">
-								<span class="progress-indicator-bar" style="width: 0%;" />
+								<span class="progress-indicator-bar" style="width: 0%;">
 							</div>
 						</div> 
 					</div>
 				</div>
-			<div class="side-column"  style="top: 250px;">
+				<div id="Cancel" class="AnimateLoadStart" style="position: absolute; top: 250px; right: 125px;"> 
+					<div class="window" style="width: 300px;">							
+						<div class="title-bar">
+							<div class="title-bar-text">Cancel Error</div>
+							<div class="title-bar-controls">
+							<button onclick="DisplayCancel()" aria-label="Close"></button>
+						</div>
+						</div>
+						<div class="window-body" style="font-family: Times; font-size: 15px">
+							<p> Error... Try clicking Enter!</p>
+						</div> 
+					</div>
+				</div>
+				<div id="Help" class="AnimateLoadStart" style="position: absolute; top: 250px; right: 75px;"> 
+					<div class="window" style="width: 400px;">							
+						<div class="title-bar">
+							<div class="title-bar-text">Help</div>
+							<div class="title-bar-controls">
+							<button onclick="DisplayHelp()" aria-label="Close"></button>
+						</div>
+						</div>
+						<div class="window-body" style="font-family: Times; font-size: 15px">
+							<p> Use the Enter button to see the main homepage!</p>
+						</div> 
+					</div>
+				</div>
+			</div>
+			<div class="side-column" style="top: 250px;">
 			<!-- Window #3-->
-				<div class="AnimateLoadStart"
 					<div class="window">
 						<div class="title-bar">
 							<div class="title-bar-text">
-								Pixelated Interests
+								VR Display
 							</div>
 							<div class="title-bar-controls">
 								<button aria-label="Close"></button>
@@ -92,12 +119,38 @@
 						<center>
 						<div class="window-body">
 							<div class="status-field-border">
-								<img src="images/robert_pixelated.png" alt="Pixelated Gif" width="250" height="250"`>
+								<img src="images/headset.gif" alt="VR Headset Spinning" width="250" height="250"`>
 							</div>
 						</div>
 						</center>
 					</div>
 			</div>
 		</div> <!-- END OF Columns-->
+<script>
+	function AnimationStart() {
+		var x = document.getElementById("AnimateLoadStart");
+			x.style.display = "block";
+			setTimeout(function(){
+			x.style.display = "none";
+			window.location = "home.html";
+			}, 2500);
+			}
+	function DisplayCancel() {
+		var content = document.getElementById("Cancel");
+			if (content.style.display === "block") {
+				content.style.display = "none";
+			} else {
+				content.style.display = "block";
+			}
+			}
+	function DisplayHelp() {
+		var content = document.getElementById("Help");
+			if (content.style.display === "block") {
+				content.style.display = "none";
+			} else {
+				content.style.display = "block";
+			}
+			}
+</script>
   	</body>
 </html>
