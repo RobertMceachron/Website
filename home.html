@@ -1,107 +1,293 @@
 <!DOCTYPE html>
-<html>
-  	<head>
-		<title>Robert McEachron</title>
-		<meta name="author" content="Robert McEachron"/>
-		<meta name="description" content="I am a undergraduate psychology student, research assistant, and writing/statistics tutor interested in psychology and computers!"/>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta property="og:image" content="/images/logo.ico"/>
-		<link rel="icon" type="image/x-icon" href="/images/logo.ico">
-		<link rel="stylesheet"href="https://unpkg.com/98.css">
-		<link rel="stylesheet"href="style.css">
-  	</head>
-  	<style>
-		body {
-            background-color: #008080;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-  	</style>
- 	<body>
-		<div class="container">
-			<div class="side-column">
-			<!-- Window #1-->
-					<div class="window">
-						<div class="title-bar">
-							<div class="title-bar-text">
-								Navigation
-							</div>
-							<div class="title-bar-controls">
-								<button aria-label="Close"></button>
-							</div>
-						</div>
-						<div class="window-body">
-							<ul class="tree-view" style="font-family: Times; font-size: 14px">
-							<li><a href="home.html"> Home </a>
-								<ul>	
-									<li><a href="Robert_MC_CV.pdf"> Curriculum Vitae </a></li>
-									<li><a href="https://www.linkedin.com/in/robertmceachron/"> LinkedIn </a></li> 
-									<li><a href="https://www.youtube.com/@robertmceachron"> YouTube </a></li>
-									<li><a href="https://github.com/RobertMceachron"> Github </a></li>
-								</ul>
-							</li>
-						 <li>
-						<details open>
-						  <summary>Projects</summary>
-							<ul>
-								<li>Scent Delivery System</li>
-								<li>Virtual Reality Toolkit</li>
-							</ul>
-						</details>
-					  </li>	
-							</ul>
-						</div>
-					</div>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<style>
+	/* Taskbar/Desktop */
+	body{
+		background-color: #008080;
+		overflow: hidden;
+	}
+	.taskbar{
+		border:0px outset grey;
+		border-top:5px solid lightgrey;
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		background-color: #c3c3c3;
+		width: 100%;
+		height: 50px;
+	}
+	.startButton{
+		height: 40px;
+		border: 5px outset white;
+		border-bottom: 5px outset black;
+		border-right: 5px outset black;
+		position: absolute;
+		left: 3px;
+	}
+	.startButton:active{
+		transform: scale(0.9);
+	}
+	.startButton:hover{
+		cursor: pointer;
+	}
+	.applicationLauncher{
+		position: absolute;
+		bottom: 55px;
+		left: 5px;
+		height: 400px;
+		width: 200px;
+		background-color: lightgrey;
+		border: 5px outset white;
+		border-bottom: 5px outset black;
+		border-right: 5px outset black;
+		box-shadow: 1px 1px 5px black;
+		padding: 2px;
+	}
+	.applicationLauncherLeftImage{
+		position: absolute;
+		height: 99%;
+		width: 50px;
+		background: linear-gradient(360deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
+		writing-mode: vertical-rl;
+	}
+	.application{
+		left: 50px;
+		width: 140px;
+		height: 50px;
+		padding-left: 5px;
+		position: absolute;
+		display: flex;
+	}
+	.application:hover{
+		background-color: rgba(30, 0, 201, 1);
+		color: white;
+		cursor: pointer;
+	}
+	.applicationText{
+		width: 90px;
+		font-size: 22px;
+		margin: 2px;
+		align-content: center;
+	}
+	.applicationIcon{
+		width: 40px;
+		justify-content: center;
+		align-content: center;
+	}
+	.applicationIconImage{
+		width: 130px;
+	}
+	.clock{
+		position: absolute;
+		right: 5px;
+		height: 40px;
+		border: 3px inset white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+
+	/* Application "Tabs" */
+	.tabContainer{
+		position: absolute;
+		background-color: lightgray;
+		border: 3px outset white;
+		border-bottom: 3px outset black;
+		border-right: 3px outset black;
+		box-shadow: 1px 1px 5px black;
+	}
+	.tabBackground{
+		background-color: lightgray;
+		width: 700px;
+	}
+	.tabContainerheader{
+		background: linear-gradient(-90deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
+		height: 25px;
+		padding: 3px;
+		border: solid 3px lightgray;
+		align-items: center;
+		color: white;
+		font-size: 25px;
+		display: flex;
+	}
+	.applicationClose{
+		position: absolute;
+		left: 97%;
+		width: 24px;
+		height: 24px;
+		background: rgb(192, 192, 192);
+		border: 1px solid rgb(192, 192, 192);
+		outline: outset 2px rgb(219, 219, 219);
+		color: black;
+	}
+	@media only screen and (min-device-width: 100px) and (max-device-width: 700px) {
+		.startButton{
+			height: 140px;
+		}
+		.taskbar{
+			height: 150px;
+		}
+		.applicationLauncher{
+			position: absolute;
+			bottom: 55px;
+			left: 5px;
+			height: 900px;
+			width: 500px;
+		}
+		.applicationLauncherLeftImage{
+			position: absolute;
+			height: 99%;
+			width: 150px;
+		}
+		.application{
+			left: 80px;
+			width: 340px;
+			height: 150px;
+		}
+		.applicationText{
+			width: 190px;
+			font-size: 82px;
+			margin: 2px;
+			align-content: center;
+		}
+		.applicationIcon{
+			width: 110px;
+			justify-content: center;
+			align-content: center;
+		}
+		.applicationIconImage{
+			width: 100px;
+		}
+		.clock{
+			position: absolute;
+			right: 5px;
+			height: 40px;
+			border: 3px inset white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+	}
+</style>
+<body>
+<div id="aboutTab">
+	<div class="tabContainer" id="tabContainer">
+		<div class="tabContainerheader" id="tabContainerheader">
+			<img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" style="width: 25px; padding-right: 5px">
+			About Me
+			<div class="applicationClose">
+				X
 			</div>
-			<div class="main-column">
-			<!-- Window #2-->
-				<div class="window" style="margin: 24px; width: 675px;">
-					<div class="title-bar">
-						<div class="title-bar-text">
-							Homepage.exe
-						</div>
-						<div class="title-bar-controls">
-							<button aria-label="Close"></button>
-						</div>
-					</div>
-					<center>
-					<div class="window-body" style="font-family: Times; font-size: 15px">
-						<div class="inside-column-2">
-								<div> 
-									<div style="border: 10px solid rgb(192, 192, 192); width: 350px; height: 350px; outline: outset 2px rgb(219, 219, 219); left: 5px;top: 15px;"> 
-										<img src="images/robert.jpg" alt="Robert Photo" width="350" height="350"> 
-									</div>
-										<div class="inside-column-4">
-											<div>
-												<a href="Robert_MC_CV.pdf"> <p><img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-0.png" alt="Mail Photo" width="50" height="50"> 
-												 <br>CV</p> </a>
-											</div>
-											<div>
-												<a href="mailto:me@robertmceachron.com"> <p><img src="https://win98icons.alexmeub.com/icons/png/outlook_express-0.png" alt="Linkedin Photo" width="50" height="50">
-												 <br>Email</p> </a>							
-											</div>
-											<div>
-												<a href="https://www.youtube.com/@robertmceachron"> <p>  <img src="https://win98icons.alexmeub.com/icons/png/wm-5.png" alt="YouTube Photo" width="50" height="50">																						
-												<br> YouTube</p> </a>
-												</div>
-											<div>
-												<a href="https://github.com/RobertMceachron"> <p><img src="https://win98icons.alexmeub.com/icons/png/console_prompt-0.png" alt="Github Photo" width="50" height="50">												
-												<br> Github </p> </a>
-												</div>
-										</div>
-								</div>
-								<div> 
-									<p> Hello I am Robert McEachron!</p>
-									<p style="padding: 5%; text-align:left;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am an undergraduate, finishing my BA in psychology and my minor in statistics and data analytics. I currently work as a writing tutor at the Writing and Multiliteracy Center as well as a statistics tutor at the Learning Resource Center both located at California State University Channel Islands.
-									<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My research interests broadly include neuroscience, cognition, and virtual reality. I am specifically curious about testing spatial cognition in virtual environments, as well as the effects of presence, and the proteus effect on behavior within simulations. I am currently conducting research examining physiological and behavioral responses to a tsunami in virtual reality. 
-									<br><center> Use the links to learn more about me! </center></p>
-								</div>
-						</div>
-					</center>
-					</div>
-				</div>
 		</div>
-  	</body>
+
+		<div class="tabBackground">
+			<div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
+				<div>
+					<img src="https://robertmceachron.com/images/robert.jpg" width="300px" style="border: 10px solid rgb(192, 192, 192); width: 350px; height: 350px; outline: outset 2px rgb(219, 219, 219); left: 5px;top: 15px">
+				</div>
+				<div>
+					<p style="padding: 10px; text-align:left;">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a graduate student at the University of Wyoming. My research interests broadly include neuroscience, cognition, and virtual reality. I am specifically curious about testing spatial cognition in virtual environments, as well as the effects of presence, and the proteus effect on behavior within simulations.
+						<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am familiar with coding in HTML, C#, Python, and R. I am currently conducting research examining physiological and behavioral responses to a tsunami in virtual reality.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="applicationLauncher" id="applicationLauncher" style="display: none;">
+	<div class="applicationLauncherLeftImage">
+		<div style="transform: rotate(180deg); color: white; font-size: 35px; margin: 2px">
+			<b> Robert 98</b>
+		</div>
+	</div>
+	<div class="application" onclick="showAbout()">
+		<div class="applicationIcon">
+			<img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" class="applicationIconImage">
+		</div>
+		<div class="applicationText">
+			About
+		</div>
+	</div>
+
+</div>
+</div>
+<div class="taskbar">
+	<img src="images/start.jpg" class="startButton" onclick="showApplicationLauncher()">
+	<div class="clock">
+		3:41
+	</div>
+</div>
+</body>
 </html>
+<script>
+	function showApplicationLauncher() {
+		var x = document.getElementById("applicationLauncher");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+	function showAbout() {
+		var x = document.getElementById("aboutTab");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else {
+			x.style.display = "none";
+		}
+	}
+
+
+	dragElement(document.getElementById("tabContainer"));
+	function dragElement(elmnt) {
+		var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+		if (document.getElementById(elmnt.id + "header")) {
+			// if present, the header is where you move the DIV from:
+			document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+		} else {
+			// otherwise, move the DIV from anywhere inside the DIV:
+			elmnt.onmousedown = dragMouseDown;
+		}
+
+		function dragMouseDown(e) {
+			e = e || window.event;
+			e.preventDefault();
+			// get the mouse cursor position at startup:
+			pos3 = e.clientX;
+			pos4 = e.clientY;
+			document.onmouseup = closeDragElement;
+			// call a function whenever the cursor moves:
+			document.onmousemove = elementDrag;
+		}
+
+		function elementDrag(e) {
+			e = e || window.event;
+			e.preventDefault();
+			// calculate the new cursor position:
+			pos1 = pos3 - e.clientX;
+			pos2 = pos4 - e.clientY;
+			pos3 = e.clientX;
+			pos4 = e.clientY;
+			// set the element's new position:
+			elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+			elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+		}
+
+		function closeDragElement() {
+			// stop moving when mouse button is released:
+			document.onmouseup = null;
+			document.onmousemove = null;
+		}
+	}
+
+</script>
