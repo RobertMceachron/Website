@@ -11,11 +11,11 @@
         overflow: hidden;
     }
     .taskbar{
-        border:0px outset grey;
+        border:0 outset grey;
         border-top:5px solid lightgrey;
         position: absolute;
-        bottom: 0px;
-        left: 0px;
+        bottom: 0;
+        left: 0;
         background-color: #c3c3c3;
         width: 100%;
         height: 50px;
@@ -79,7 +79,7 @@
         align-content: center;
     }
     .applicationIconImage{
-        width: 130px;
+        width: 40px;
     }
     .clock{
         position: absolute;
@@ -118,14 +118,33 @@
     }
     .applicationClose{
         position: absolute;
-        left: 97%;
+        left: 95.5%;
         width: 24px;
         height: 24px;
         background: rgb(192, 192, 192);
         border: 1px solid rgb(192, 192, 192);
         outline: outset 2px rgb(219, 219, 219);
         color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
+    .applicationMaxMin{
+        position: absolute;
+        left: 92%;
+        width: 24px;
+        height: 24px;
+        background: rgb(192, 192, 192);
+        border: 1px solid rgb(192, 192, 192);
+        outline: outset 2px rgb(219, 219, 219);
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+   /* Depricated until desktop finished. Too much work
     @media only screen and (min-device-width: 100px) and (max-device-width: 700px) {
         .startButton{
             height: 140px;
@@ -175,7 +194,7 @@
             padding-left: 6px;
             padding-right: 6px;
         }
-    }
+    } */
 </style>
 <body>
 <div id="aboutTab">
@@ -183,8 +202,8 @@
         <div class="tabContainerheader" id="tabContainerheader">
             <img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" style="width: 25px; padding-right: 5px">
             About Me
-            <div class="applicationClose" onclick="">
-                X
+            <div class="applicationClose" onclick="showAbout()">
+                ✕
             </div>
         </div>
 
@@ -204,25 +223,85 @@
     </div>
 </div>
 
+<div id="cvTab">
+    <div class="tabContainer" id="tabContainer1">
+        <div class="tabContainerheader" id="tabContainerheader">
+            <img src="https://win98icons.alexmeub.com/icons/png/outlook_express_tack-3.png" style="width: 25px; padding-right: 5px">
+            Curriculum Vitae
+            <div class="applicationClose" onclick="showCV()">
+                ✕
+            </div>
+            <div class="applicationMaxMin" onclick="maxCV()">
+                ▢
+            </div>
+        </div>
+        <div class="tabBackground" id = "cvTabSize" style="width: 850px">
+            <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
+                <div>
+                    <object class="pdf"
+                            data="../Robert_MC_CV.pdf"
+                            width="825px"
+                            height="500px">
+                    </object>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="oavrrTab">
+    <div class="tabContainer" id="tabContainer2">
+        <div class="tabContainerheader" id="tabContainerheader">
+            <img src="https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png" style="width: 25px; padding-right: 5px">
+            Open Access Virtual Reality Research
+            <div class="applicationClose" onclick="showOAVRR()">
+                ✕
+            </div>
+        </div>
+
+        <div class="tabBackground" style="width: 850px">
+            <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
+                <div>
+                    <p style="padding: 10px; text-align:left;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a graduate student at the University of Wyoming. My research interests broadly include neuroscience, cognition, and virtual reality. I am specifically curious about testing spatial cognition in virtual environments, as well as the effects of presence, and the proteus effect on behavior within simulations.
+                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am familiar with coding in HTML, C#, Python, and R. I am currently conducting research examining physiological and behavioral responses to a tsunami in virtual reality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="applicationLauncher" id="applicationLauncher" style="display: none;">
     <div class="applicationLauncherLeftImage">
         <div style="transform: rotate(180deg); color: white; font-size: 35px; margin: 2px">
             <b> Robert 98</b>
         </div>
     </div>
-    <div class="application" onclick="showAbout()">
-        <div class="applicationIcon">
-            <img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" class="applicationIconImage">
-        </div>
-        <div class="applicationText">
-            About
-        </div>
-    </div>
-
-</div>
+        <!-- About Page -->
+            <div class="application" onclick="showAbout()">
+                <div class="applicationIcon">
+                    <img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" class="applicationIconImage">
+                </div>
+                <div class="applicationText">
+                    About
+                </div>
+            </div>
+        <div style="height: 50px; width: 100%;"></div>
+        <!-- CV Page -->
+            <div class="application" onclick="showCV()">
+                <div class="applicationIcon">
+                    <img src="https://win98icons.alexmeub.com/icons/png/outlook_express_tack-3.png" class="applicationIconImage">
+                </div>
+                <div class="applicationText">
+                    CV
+                </div>
+            </div>
 </div>
 <div class="taskbar">
-    <img src="images/start.jpg" class="startButton" onclick="showApplicationLauncher()">
+    <img src="../images/start.jpg" class="startButton" onclick="showApplicationLauncher()">
     <div class="clock">
         3:41
     </div>
@@ -246,8 +325,35 @@
             x.style.display = "none";
         }
     }
+    function showCV() {
+        var x = document.getElementById("cvTab");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function maxCV() {
+        const x = document.getElementById("cvTabSize");
+        const currentWidth = x.getBoundingClientRect().width;
 
+        if (currentWidth <= 850) {
+            x.style.width = window.innerWidth - 15 + "px";
+        } else {
+            x.style.width = "850px";
+        }
+    }
 
+    function showOAVRR() {
+        var x = document.getElementById("cvTab");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    document.querySelectorAll(".tabContainer").forEach(dragElement);
     dragElement(document.getElementById("tabContainer"));
     function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
