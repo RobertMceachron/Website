@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap');
+
     /* Taskbar/Desktop */
     body{
         background-color: #008080;
@@ -54,6 +56,17 @@
         background: linear-gradient(360deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
         writing-mode: vertical-rl;
     }
+    .startLeftTitle{
+        transform: rotate(180deg);
+        color: white;
+        font-size: 35px;
+        margin: 2px;
+        font-weight: bold;
+    }
+    .startIconSpacer{
+        height: 50px;
+        width: 100%;
+    }
     .application{
         left: 50px;
         width: 140px;
@@ -93,7 +106,7 @@
         padding-right: 6px;
     }
 
-    /* Application "Tabs" */
+    /* Application Tabs */
     .tabContainer{
         position: absolute;
         background-color: lightgray;
@@ -106,7 +119,7 @@
         background-color: lightgray;
         width: 700px;
     }
-    .tabContainerheader{
+    .tabHeader{
         background: linear-gradient(-90deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
         height: 25px;
         padding: 3px;
@@ -116,9 +129,23 @@
         font-size: 25px;
         display: flex;
     }
+    .tabHeaderImage{
+        width: 25px;
+        padding-right: 5px;
+    }
+    .imageBorder{
+        border: 10px solid rgb(192, 192, 192);
+        width: 350px;
+        height: 350px;
+        outline: outset 2px rgb(219, 219, 219);
+        left: 5px;
+        top: 15px;
+    }
+
+
     .applicationClose{
         position: absolute;
-        left: 95.5%;
+        right: 6px;
         width: 24px;
         height: 24px;
         background: rgb(192, 192, 192);
@@ -132,7 +159,7 @@
     }
     .applicationMaxMin{
         position: absolute;
-        left: 92%;
+        right: 38px;
         width: 24px;
         height: 24px;
         background: rgb(192, 192, 192);
@@ -144,78 +171,24 @@
         align-items: center;
         text-align: center;
     }
-   /* Depricated until desktop finished. Too much work
-    @media only screen and (min-device-width: 100px) and (max-device-width: 700px) {
-        .startButton{
-            height: 140px;
-        }
-        .taskbar{
-            height: 150px;
-        }
-        .applicationLauncher{
-            position: absolute;
-            bottom: 55px;
-            left: 5px;
-            height: 900px;
-            width: 500px;
-        }
-        .applicationLauncherLeftImage{
-            position: absolute;
-            height: 99%;
-            width: 150px;
-        }
-        .application{
-            left: 80px;
-            width: 340px;
-            height: 150px;
-        }
-        .applicationText{
-            width: 190px;
-            font-size: 82px;
-            margin: 2px;
-            align-content: center;
-        }
-        .applicationIcon{
-            width: 110px;
-            justify-content: center;
-            align-content: center;
-        }
-        .applicationIconImage{
-            width: 100px;
-        }
-        .clock{
-            position: absolute;
-            right: 5px;
-            height: 40px;
-            border: 3px inset white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-left: 6px;
-            padding-right: 6px;
-        }
-    } */
 </style>
+
+
 <body>
+<!-- About Tab !-->
 <div id="aboutTab">
     <div class="tabContainer" id="tabContainer">
-        <div class="tabContainerheader" id="tabContainerheader">
-            <img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" style="width: 25px; padding-right: 5px">
+        <div class="tabHeader" id="tabHeader">
+            <img src="../images/icons/book.png" class="tabHeaderImage">
             About Me
-            <div class="applicationClose" onclick="showAbout()">
-                ✕
-            </div>
+            <div class="applicationClose" onclick="showAbout()">✕</div>
         </div>
-
         <div class="tabBackground">
             <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
-                <div>
-                    <img src="https://robertmceachron.com/images/robert.jpg" width="300px" style="border: 10px solid rgb(192, 192, 192); width: 350px; height: 350px; outline: outset 2px rgb(219, 219, 219); left: 5px;top: 15px">
-                </div>
-                <div>
-                    <p style="padding: 10px; text-align:left;">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a graduate student at the University of Wyoming. My research interests broadly include neuroscience, cognition, and virtual reality. I am specifically curious about testing spatial cognition in virtual environments, as well as the effects of presence, and the proteus effect on behavior within simulations.
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am familiar with coding in HTML, C#, Python, and R. I am currently conducting research examining physiological and behavioral responses to a tsunami in virtual reality.
+                <div><img src="../images/robert.jpg" width="300px" class="imageBorder"></div>
+                <div><p style="padding: 10px; text-align:left; ">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a graduate student at the University of Wyoming. My research interests broadly include neuroscience, cognition, and virtual reality. I am specifically curious about testing spatial cognition in virtual environments, as well as the effects of presence, and the proteus effect on behavior within simulations.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am familiar with coding in HTML, C#, Python, and R. I am currently conducting research examining physiological and behavioral responses to a tsunami in virtual reality.
                     </p>
                 </div>
             </div>
@@ -223,25 +196,23 @@
     </div>
 </div>
 
+<!-- CV Tab !-->
 <div id="cvTab">
     <div class="tabContainer" id="tabContainer1">
-        <div class="tabContainerheader" id="tabContainerheader">
-            <img src="https://win98icons.alexmeub.com/icons/png/outlook_express_tack-3.png" style="width: 25px; padding-right: 5px">
+        <div class="tabHeader" id="tabHeader">
+            <img src="../images/icons/paper.png" class="tabHeaderImage">
             Curriculum Vitae
-            <div class="applicationClose" onclick="showCV()">
-                ✕
-            </div>
-            <div class="applicationMaxMin" onclick="maxCV()">
-                ▢
-            </div>
+            <div class="applicationMaxMin" onclick="maxCV()">🗗</div>
+            <div class="applicationClose" onclick="showCV()">✕</div>
         </div>
-        <div class="tabBackground" id = "cvTabSize" style="width: 850px">
+        <div class="tabBackground" id="cvTabSize" style="width: 850px; height: 520px;">
             <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
                 <div>
                     <object class="pdf"
                             data="../Robert_MC_CV.pdf"
                             width="825px"
-                            height="500px">
+                            height="500px"
+                    id="PDFReader">
                     </object>
                 </div>
             </div>
@@ -249,65 +220,55 @@
     </div>
 </div>
 
-<div id="oavrrTab">
-    <div class="tabContainer" id="tabContainer2">
-        <div class="tabContainerheader" id="tabContainerheader">
-            <img src="https://win98icons.alexmeub.com/icons/png/monitor_blue_grad-0.png" style="width: 25px; padding-right: 5px">
-            Open Access Virtual Reality Research
-            <div class="applicationClose" onclick="showOAVRR()">
-                ✕
-            </div>
-        </div>
 
-        <div class="tabBackground" style="width: 850px">
-            <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
-                <div>
-                    <p style="padding: 10px; text-align:left;">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a graduate student at the University of Wyoming. My research interests broadly include neuroscience, cognition, and virtual reality. I am specifically curious about testing spatial cognition in virtual environments, as well as the effects of presence, and the proteus effect on behavior within simulations.
-                        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am familiar with coding in HTML, C#, Python, and R. I am currently conducting research examining physiological and behavioral responses to a tsunami in virtual reality.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+<!-- Start Menu !-->
 <div class="applicationLauncher" id="applicationLauncher" style="display: none;">
     <div class="applicationLauncherLeftImage">
-        <div style="transform: rotate(180deg); color: white; font-size: 35px; margin: 2px">
-            <b> Robert 98</b>
-        </div>
+        <div class="startLeftTitle">Robert 98</div>
     </div>
-        <!-- About Page -->
+        <!-- About Start Button -->
             <div class="application" onclick="showAbout()">
-                <div class="applicationIcon">
-                    <img src="https://win98icons.alexmeub.com/icons/png/help_book_cool-4.png" class="applicationIconImage">
-                </div>
-                <div class="applicationText">
-                    About
-                </div>
+            <div class="applicationIcon"><img src="../images/icons/book.png" class="applicationIconImage"></div>
+            <div class="applicationText">About</div>
             </div>
-        <div style="height: 50px; width: 100%;"></div>
-        <!-- CV Page -->
+            <div class="startIconSpacer"></div>
+        <!-- CV Start Button -->
             <div class="application" onclick="showCV()">
-                <div class="applicationIcon">
-                    <img src="https://win98icons.alexmeub.com/icons/png/outlook_express_tack-3.png" class="applicationIconImage">
-                </div>
-                <div class="applicationText">
-                    CV
-                </div>
+            <div class="applicationIcon"><img src="../images/icons/paper.png" class="applicationIconImage"></div>
+            <div class="applicationText">CV</div>
             </div>
+            <div class="startIconSpacer"></div>
+        <!-- OAVRR Start Button -->
+            <div class="application" onclick="showOAVRR()">
+            <div class="applicationIcon"><img src="../images/icons/bluepc.png" class="applicationIconImage"></div>
+            <div class="applicationText">OAVRR</div>
+            </div>
+            <div class="startIconSpacer"></div>
+        <!-- GitHub Start Button -->
+            <div class="application" onclick="popupGithub()">
+            <div class="applicationIcon"><img src="../images/icons/github.png" class="applicationIconImage"></div>
+            <div class="applicationText">Github</div>
+            </div>
+            <div class="startIconSpacer"></div>
+    <!-- YouTube Start Button -->
+            <div class="application" onclick="popupYoutube()">
+            <div class="applicationIcon"><img src="../images/icons/youtube.png" class="applicationIconImage"></div>
+            <div class="applicationText">YouTube</div>
+            </div>
+            <div class="startIconSpacer"></div>
 </div>
+
+<!-- Taskbar !-->
 <div class="taskbar">
-    <img src="../images/start.jpg" class="startButton" onclick="showApplicationLauncher()">
+    <img src="../images/icons/start.jpg" class="startButton" onclick="showApplicationLauncher()">
     <div class="clock">
         3:41
     </div>
 </div>
 </body>
 </html>
+
+
 <script>
     function showApplicationLauncher() {
         var x = document.getElementById("applicationLauncher");
@@ -333,33 +294,43 @@
             x.style.display = "none";
         }
     }
+
     function maxCV() {
         const x = document.getElementById("cvTabSize");
         const currentWidth = x.getBoundingClientRect().width;
+        const currentHeight = x.getBoundingClientRect().height;
+        const y = document.getElementById("PDFReader");
+        const z = document.getElementById("cvTab");
 
         if (currentWidth <= 850) {
-            x.style.width = window.innerWidth - 15 + "px";
+            x.style.width = window.innerWidth + "px";
+            z.style.position = "fixed";
+            z.style.left = "0px";
+            z.style.top = "0px";
+            y.style.width = window.innerWidth + "px";
         } else {
             x.style.width = "850px";
+            y.style.width = "700px";
+        }
+
+        if (currentHeight <= 520) {
+            x.style.height = window.innerHeight - 75 + "px";
+            y.style.height = window.innerHeight - 75 + "px";
+
+        } else {
+            x.style.height = "520px";
+            y.style.height = "500px";
         }
     }
 
-    function showOAVRR() {
-        var x = document.getElementById("cvTab");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
 
     document.querySelectorAll(".tabContainer").forEach(dragElement);
     dragElement(document.getElementById("tabContainer"));
     function dragElement(elmnt) {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        if (document.getElementById(elmnt.id + "header")) {
+        if (document.getElementById(elmnt.id + "Header")) {
             // if present, the header is where you move the DIV from:
-            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            document.getElementById(elmnt.id + "Header").onmousedown = dragMouseDown;
         } else {
             // otherwise, move the DIV from anywhere inside the DIV:
             elmnt.onmousedown = dragMouseDown;
@@ -395,5 +366,4 @@
             document.onmousemove = null;
         }
     }
-
 </script>
