@@ -220,6 +220,22 @@
     </div>
 </div>
 
+<div id="popupTab">
+    <div class="tabContainer" id="tabContainer2">
+        <div class="tabHeader" id="tabHeader">
+            <img src="../images/icons/paper.png" class="tabHeaderImage">
+            External Link
+            <div class="applicationMaxMin" onclick="maxCV()">🗗</div>
+            <div class="applicationClose" onclick="showCV()">✕</div>
+        </div>
+        <div class="tabBackground" style="width: 450px; height: 100px;">
+            <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
+                <p> Are you sure you would like to leave the website?</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- Start Menu !-->
 <div class="applicationLauncher" id="applicationLauncher" style="display: none;">
@@ -300,14 +316,13 @@
         const currentWidth = x.getBoundingClientRect().width;
         const currentHeight = x.getBoundingClientRect().height;
         const y = document.getElementById("PDFReader");
-        const z = document.getElementById("cvTab");
+        const z = document.getElementById("tabContainer1");
 
         if (currentWidth <= 850) {
-            x.style.width = window.innerWidth + "px";
-            z.style.position = "fixed";
+            x.style.width = window.innerWidth - 6 + "px";
+            y.style.width = window.innerWidth - 6 + "px";
             z.style.left = "0px";
             z.style.top = "0px";
-            y.style.width = window.innerWidth + "px";
         } else {
             x.style.width = "850px";
             y.style.width = "700px";
