@@ -1,41 +1,188 @@
-.side-column {
-  display: inline-block;
-  position: relative;
-  top: 160px;
+/* Taskbar/Desktop */
+body{
+  background-color: #008080;
+  overflow: hidden;
 }
-.main-column {
-  display: inline-block;
-  flex: 1;
-  position: relative;
-  top: 90px;
+.taskbar{
+  border:0 outset grey;
+  border-top:5px solid lightgrey;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #c3c3c3;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
 }
-.container {
-    display: flex;
-    width: 100%;
-    max-width: 1100px;
+.startButton{
+  height: 40px;
+  border: 5px outset white;
+  border-bottom: 5px outset black;
+  border-right: 5px outset black;
+  position: absolute;
+  left: 3px;
 }
-.inside-column-2{
-  display: grid;
-  gap: 60;
-  grid-template-columns: 1fr 1fr;
+.startButton:active{
+  transform: scale(0.9);
 }
-.inside-column-4{
-  display: grid;
-  gap: 60;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+.startButton:hover{
+  cursor: pointer;
 }
-@keyframes myAnimation {
-  0%   {width: 0%;}
-  100%  {width: 100%;}
+.applicationLauncher{
+  position: absolute;
+  bottom: 55px;
+  left: 5px;
+  height: 400px;
+  width: 200px;
+  background-color: lightgrey;
+  border: 5px outset white;
+  border-bottom: 5px outset black;
+  border-right: 5px outset black;
+  box-shadow: 1px 1px 5px black;
+  padding: 2px;
 }
-.progress-indicator-bar{
-  width: 00%;
-  animation-name: myAnimation;
-  animation-duration: 2.5s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
+.applicationLauncherLeftImage{
+  position: absolute;
+  height: 99%;
+  width: 50px;
+  background: linear-gradient(360deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
+  writing-mode: vertical-rl;
 }
-.AnimateLoadStart {
-  display: none;
+.startLeftTitle{
+  transform: rotate(180deg);
+  color: white;
+  font-size: 35px;
+  margin: 2px;
+  font-weight: bold;
+}
+.startIconSpacer{
+  height: 50px;
+  width: 100%;
+}
+.application{
+  left: 50px;
+  width: 140px;
+  height: 50px;
+  padding-left: 5px;
+  position: absolute;
+  display: flex;
+}
+.application:hover{
+  background-color: rgba(30, 0, 201, 1);
+  color: white;
+  cursor: pointer;
+}
+.applicationText{
+  width: 90px;
+  font-size: 22px;
+  margin: 2px;
+  align-content: center;
+}
+.applicationIcon{
+  width: 40px;
+  justify-content: center;
+  align-content: center;
+}
+.applicationIconImage{
+  width: 40px;
+}
+.taskbarApp{
+  border: 5px outset white;
+  border-bottom: 5px outset black;
+  border-right: 5px outset black;
+  max-height: 39px;
+  background-color: #c3c3c3;
+}
+.taskbarApp:active{
+  transform: scale(0.9);
+}
+
+.clock{
+  position: absolute;
+  right: 5px;
+  height: 40px;
+  border: 3px inset white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+/* Application Tabs */
+.tabContainer{
+  position: absolute;
+  background-color: lightgray;
+  border: 3px outset white;
+  border-bottom: 3px outset black;
+  border-right: 3px outset black;
+  box-shadow: 1px 1px 5px black;
+}
+.tabBackground{
+  background-color: lightgray;
+  width: 700px;
+}
+.tabHeader{
+  background: linear-gradient(-90deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
+  height: 25px;
+  padding: 3px;
+  border: solid 3px lightgray;
+  align-items: center;
+  color: white;
+  font-size: 25px;
+  display: flex;
+}
+.tabHeaderImage{
+  width: 25px;
+  padding-right: 5px;
+}
+.imageBorder{
+  border: 10px solid rgb(192, 192, 192);
+  width: 350px;
+  height: 350px;
+  outline: outset 2px rgb(219, 219, 219);
+  left: 5px;
+  top: 15px;
+}
+.button{
+  border: 5px outset white;
+  border-bottom: 5px outset black;
+  border-right: 5px outset black;
+  text-align: center;
+  max-height: 30px;
+}
+.button:hover{
+  transform: scale(0.9);
+  cursor: pointer;
+  color:blue;
+}
+
+.applicationClose{
+  position: absolute;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  background: rgb(192, 192, 192);
+  border: 1px solid rgb(192, 192, 192);
+  outline: outset 2px rgb(219, 219, 219);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.applicationMaxMin{
+  position: absolute;
+  right: 38px;
+  width: 24px;
+  height: 24px;
+  background: rgb(192, 192, 192);
+  border: 1px solid rgb(192, 192, 192);
+  outline: outset 2px rgb(219, 219, 219);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

@@ -2,182 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Robert98</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap');
-
-    /* Taskbar/Desktop */
-    body{
-        background-color: #008080;
-        overflow: hidden;
-    }
-    .taskbar{
-        border:0 outset grey;
-        border-top:5px solid lightgrey;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background-color: #c3c3c3;
-        width: 100%;
-        height: 50px;
-    }
-    .startButton{
-        height: 40px;
-        border: 5px outset white;
-        border-bottom: 5px outset black;
-        border-right: 5px outset black;
-        position: absolute;
-        left: 3px;
-    }
-    .startButton:active{
-        transform: scale(0.9);
-    }
-    .startButton:hover{
-        cursor: pointer;
-    }
-    .applicationLauncher{
-        position: absolute;
-        bottom: 55px;
-        left: 5px;
-        height: 400px;
-        width: 200px;
-        background-color: lightgrey;
-        border: 5px outset white;
-        border-bottom: 5px outset black;
-        border-right: 5px outset black;
-        box-shadow: 1px 1px 5px black;
-        padding: 2px;
-    }
-    .applicationLauncherLeftImage{
-        position: absolute;
-        height: 99%;
-        width: 50px;
-        background: linear-gradient(360deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
-        writing-mode: vertical-rl;
-    }
-    .startLeftTitle{
-        transform: rotate(180deg);
-        color: white;
-        font-size: 35px;
-        margin: 2px;
-        font-weight: bold;
-    }
-    .startIconSpacer{
-        height: 50px;
-        width: 100%;
-    }
-    .application{
-        left: 50px;
-        width: 140px;
-        height: 50px;
-        padding-left: 5px;
-        position: absolute;
-        display: flex;
-    }
-    .application:hover{
-        background-color: rgba(30, 0, 201, 1);
-        color: white;
-        cursor: pointer;
-    }
-    .applicationText{
-        width: 90px;
-        font-size: 22px;
-        margin: 2px;
-        align-content: center;
-    }
-    .applicationIcon{
-        width: 40px;
-        justify-content: center;
-        align-content: center;
-    }
-    .applicationIconImage{
-        width: 40px;
-    }
-    .clock{
-        position: absolute;
-        right: 5px;
-        height: 40px;
-        border: 3px inset white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 6px;
-        padding-right: 6px;
-    }
-
-    /* Application Tabs */
-    .tabContainer{
-        position: absolute;
-        background-color: lightgray;
-        border: 3px outset white;
-        border-bottom: 3px outset black;
-        border-right: 3px outset black;
-        box-shadow: 1px 1px 5px black;
-    }
-    .tabBackground{
-        background-color: lightgray;
-        width: 700px;
-    }
-    .tabHeader{
-        background: linear-gradient(-90deg,rgba(66, 120, 255, 1) 0%, rgba(30, 0, 201, 1) 40%);
-        height: 25px;
-        padding: 3px;
-        border: solid 3px lightgray;
-        align-items: center;
-        color: white;
-        font-size: 25px;
-        display: flex;
-    }
-    .tabHeaderImage{
-        width: 25px;
-        padding-right: 5px;
-    }
-    .imageBorder{
-        border: 10px solid rgb(192, 192, 192);
-        width: 350px;
-        height: 350px;
-        outline: outset 2px rgb(219, 219, 219);
-        left: 5px;
-        top: 15px;
-    }
-
-
-    .applicationClose{
-        position: absolute;
-        right: 6px;
-        width: 24px;
-        height: 24px;
-        background: rgb(192, 192, 192);
-        border: 1px solid rgb(192, 192, 192);
-        outline: outset 2px rgb(219, 219, 219);
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .applicationMaxMin{
-        position: absolute;
-        right: 38px;
-        width: 24px;
-        height: 24px;
-        background: rgb(192, 192, 192);
-        border: 1px solid rgb(192, 192, 192);
-        outline: outset 2px rgb(219, 219, 219);
-        color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-</style>
-
 
 <body>
 <!-- About Tab !-->
 <div id="aboutTab">
-    <div class="tabContainer" id="tabContainer">
+    <div class="tabContainer" id="tabContainer" style="left: 15%; top: 10%;">
         <div class="tabHeader" id="tabHeader">
             <img src="../images/icons/book.png" class="tabHeaderImage">
             About Me
@@ -187,9 +19,10 @@
             <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
                 <div><img src="../images/robert.jpg" width="300px" class="imageBorder"></div>
                 <div><p style="padding: 10px; text-align:left; ">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am a graduate student at the University of Wyoming. My research interests broadly include neuroscience, cognition, and virtual reality. I am specifically curious about testing spatial cognition in virtual environments, as well as the effects of presence, and the proteus effect on behavior within simulations.<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am familiar with coding in HTML, C#, Python, and R. I am currently conducting research examining physiological and behavioral responses to a tsunami in virtual reality.
-                    </p>
+                    Hello!<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I am currently a graduate student in Experimental Psychology at the University of Wyoming. At the moment, my areas of interest include neural networks, statistics, virtual reality (VR), and cognition.
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have experience coding in R, Python, C#, and HTML. I'm working on an open-source project (OAVRR) that will help researchers in psychology have easier access to VR simulations and toolkits. If you have any questions or would like to reach out, contact me@robertmceachron.com
+                </p>
                 </div>
             </div>
         </div>
@@ -197,7 +30,7 @@
 </div>
 
 <!-- CV Tab !-->
-<div id="cvTab">
+<div id="cvTab" style="display: none;">
     <div class="tabContainer" id="tabContainer1">
         <div class="tabHeader" id="tabHeader">
             <img src="../images/icons/paper.png" class="tabHeaderImage">
@@ -210,9 +43,9 @@
                 <div>
                     <object class="pdf"
                             data="../Robert_MC_CV.pdf"
-                            width="825px"
+                            width="800px"
                             height="500px"
-                    id="PDFReader">
+                            id="PDFReader">
                     </object>
                 </div>
             </div>
@@ -220,21 +53,54 @@
     </div>
 </div>
 
-<div id="popupTab">
-    <div class="tabContainer" id="tabContainer2">
-        <div class="tabHeader" id="tabHeader">
-            <img src="../images/icons/paper.png" class="tabHeaderImage">
+<!-- Github Popup !-->
+<div id="popupGithub" style="display: none;">
+    <div class="tabContainer" style="left: 40%; top: 40%;">
+        <div class="tabHeader">
+            <img src="../images/icons/github.png" class="tabHeaderImage">
             External Link
-            <div class="applicationMaxMin" onclick="maxCV()">🗗</div>
-            <div class="applicationClose" onclick="showCV()">✕</div>
         </div>
-        <div class="tabBackground" style="width: 450px; height: 100px;">
-            <div style="display: flex; justify-content: space-around; align-items: center; padding: 3px">
-                <p> Are you sure you would like to leave the website?</p>
+            <div class="tabBackground" style="width: 400px; height: 100px; justify-content: center;">
+                <center> <p> Are you sure you would like to leave the website?</p>
+                    <div style="display: flex; justify-content: center; align-items: center; padding: 3px">
+                        <a href="https://github.com/RobertMceachron">
+                            <div class="button" style="width: 100px; margin-right: 10px;">
+                                Yes
+                            </div>
+                        </a>
+                    <div class="button" style="width: 100px;" onclick="showPopupGithub()">
+                        No
+                    </div>
+                </center>
             </div>
         </div>
     </div>
 </div>
+
+<!-- YouTube Popup !-->
+<div id="popupYoutube" style="display: none;">
+    <div class="tabContainer" style="left: 40%; top: 40%;">
+        <div class="tabHeader">
+            <img src="../images/icons/youtube.png" class="tabHeaderImage">
+            External Link
+        </div>
+        <div class="tabBackground" style="width: 400px; height: 100px; justify-content: center;">
+            <center> <p> Are you sure you would like to leave the website?</p>
+                <div style="display: flex; justify-content: center; align-items: center; padding: 3px">
+                    <a href="https://www.youtube.com/@robertmceachron">
+                        <div class="button" style="width: 100px; margin-right: 10px;">
+                            Yes
+                        </div>
+                    </a>
+                    <div class="button" style="width: 100px;" onclick="showPopupYoutube()">
+                        No
+                    </div>
+            </center>
+        </div>
+    </div>
+</div>
+</div>
+
 
 
 <!-- Start Menu !-->
@@ -261,13 +127,13 @@
             </div>
             <div class="startIconSpacer"></div>
         <!-- GitHub Start Button -->
-            <div class="application" onclick="popupGithub()">
+            <div class="application" onclick="showPopupGithub()">
             <div class="applicationIcon"><img src="../images/icons/github.png" class="applicationIconImage"></div>
             <div class="applicationText">Github</div>
             </div>
             <div class="startIconSpacer"></div>
     <!-- YouTube Start Button -->
-            <div class="application" onclick="popupYoutube()">
+            <div class="application" onclick="showPopupYoutube()">
             <div class="applicationIcon"><img src="../images/icons/youtube.png" class="applicationIconImage"></div>
             <div class="applicationText">YouTube</div>
             </div>
@@ -277,6 +143,17 @@
 <!-- Taskbar !-->
 <div class="taskbar">
     <img src="../images/icons/start.jpg" class="startButton" onclick="showApplicationLauncher()">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1px">
+            <div style="width: 125px; height: 40px"></div>
+                <div id="taskbarAppAbout" class="taskbarApp">
+                    <div style="display: flex;" onclick="minMaxAbout()">
+                        <div class="applicationIcon"><img src="../images/icons/book.png" class="applicationIconImage"></div>
+                        <div class="applicationText">About</div>
+                    </div>
+                </div>
+    </div>
+
+
     <div class="clock">
         3:41
     </div>
@@ -296,12 +173,45 @@
     }
     function showAbout() {
         var x = document.getElementById("aboutTab");
+        var y = document.getElementById("taskbarAppAbout");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "block";
+        } else {
+            x.style.display = "none";
+            y.style.display = "none";
+        }
+    }
+
+    function minMaxAbout() {
+        var x = document.getElementById("aboutTab");
+        var y = document.getElementById("taskbarAppAbout");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.backgroundColor = "#c3c3c3";
+        } else {
+            x.style.display = "none";
+            y.style.backgroundColor = "#959595";
+        }
+    }
+
+    function showPopupYoutube() {
+        var x = document.getElementById("popupYoutube");
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
             x.style.display = "none";
         }
     }
+    function showPopupGithub() {
+        var x = document.getElementById("popupGithub");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
     function showCV() {
         var x = document.getElementById("cvTab");
         if (x.style.display === "none") {
@@ -320,7 +230,7 @@
 
         if (currentWidth <= 850) {
             x.style.width = window.innerWidth - 6 + "px";
-            y.style.width = window.innerWidth - 6 + "px";
+            y.style.width = window.innerWidth - 100 + "px";
             z.style.left = "0px";
             z.style.top = "0px";
         } else {

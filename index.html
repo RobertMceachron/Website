@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   	<head>
 		<title>Robert McEachron</title>
@@ -8,149 +9,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta property="og:image" content="/images/logo.ico"/>
 		<link rel="icon" type="image/x-icon" href="/images/logo.ico">
-		<link rel="stylesheet"href="https://unpkg.com/98.css">
-		<link rel="stylesheet"href="style.css">
-  	</head>
+	</head>
+
+
   	<style>
 		body {
-            background-color: #008080;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-			cursor: url("images/logo.svg"), auto;
-        }
+            background-color: #000;
+			color: #c3c3c3;
+			font-size: 35px;
+		}
   	</style>
  	<body>
-		<div class="container">
-			<div class="side-column">
-			<!-- Window #1-->
-					<div class="window">
-						<div class="title-bar">
-							<div class="title-bar-text">
-								It is Mii!
-							</div>
-							<div class="title-bar-controls">
-								<button aria-label="Close"></button>
-							</div>
-						</div>
-						<center>
-						<div class="window-body">
-							<div class="status-field-border">
-								<img src="images/robert_mii.gif" alt="Robert as a Mii" width="250" height="250">
-							</div>
-						</div>
-						</center>
-					</div>
-			</div>
-			<div class="main-column">
-			<!-- Window #2-->
-				<div class="window" style="margin: 24px; width: 500px;">
-					<div class="title-bar">
-						<div class="title-bar-text">
-							Welcome.exe
-						</div>
-						<div class="title-bar-controls">
-							<button onclick="DisplayHelp()" aria-label="Help"></button>
-							<button aria-label="Close"></button>
-						</div>
-					</div>
-					<center>
-					<div class="window-body" style="font-family: Times; font-size: 15px">
-							<div style="border: 10px solid rgb(192, 192, 192); width: 350px; height: 350px; outline: outset 2px rgb(219, 219, 219); left: 5px;top: 15px;"> 
-								<img src="images/placeholder.png" alt="Robert Photo" width="350" height="350">
-							</div>
-						<p> My name is Robert McEachron! I am a undergraduate psychology student, research assistant, and writing/statistics tutor </p>
-						<section class="field-row" style="justify-content: flex-end">
-							<button onclick="AnimationStart()">Enter</button>
-							<button onclick="DisplayCancel()">Cancel</button>
-						</section>
-					</center>
-					</div>
-				<div id="AnimateLoadStart" class="AnimateLoadStart" style="position: absolute; top: 300px;"> 
-					<div class="window" style="width: 300px;">							
-						<div class="title-bar">
-							<div class="title-bar-text">Loading...</div>
-						</div>
-						<div class="window-body">
-							<div class="progress-indicator segmented">
-								<span class="progress-indicator-bar" style="width: 0%;">
-							</div>
-						</div> 
-					</div>
-				</div>
-				<div id="Cancel" class="AnimateLoadStart" style="position: absolute; top: 250px; right: 125px;"> 
-					<div class="window" style="width: 300px;">							
-						<div class="title-bar">
-							<div class="title-bar-text">Cancel Error</div>
-							<div class="title-bar-controls">
-							<button onclick="DisplayCancel()" aria-label="Close"></button>
-						</div>
-						</div>
-						<div class="window-body" style="font-family: Times; font-size: 15px">
-							<p> Error... Try clicking Enter!</p>
-						</div> 
-					</div>
-				</div>
-				<div id="Help" class="AnimateLoadStart" style="position: absolute; top: 250px; right: 75px;"> 
-					<div class="window" style="width: 400px;">							
-						<div class="title-bar">
-							<div class="title-bar-text">Help</div>
-							<div class="title-bar-controls">
-							<button onclick="DisplayHelp()" aria-label="Close"></button>
-						</div>
-						</div>
-						<div class="window-body" style="font-family: Times; font-size: 15px">
-							<p> Use the Enter button to see the main homepage!</p>
-						</div> 
-					</div>
-				</div>
-			</div>
-			<div class="side-column" style="top: 250px;">
-			<!-- Window #3-->
-					<div class="window">
-						<div class="title-bar">
-							<div class="title-bar-text">
-								VR Display
-							</div>
-							<div class="title-bar-controls">
-								<button aria-label="Close"></button>
-							</div>
-						</div>	
-						<center>
-						<div class="window-body">
-							<div class="status-field-border">
-								<img src="images/headset.gif" alt="VR Headset Spinning" width="250" height="250"`>
-							</div>
-						</div>
-						</center>
-					</div>
-			</div>
-		</div> <!-- END OF Columns-->
-<script>
-	function AnimationStart() {
-		var x = document.getElementById("AnimateLoadStart");
-			x.style.display = "block";
-			setTimeout(function(){
-			x.style.display = "none";
-			window.location = "home.html";
-			}, 2500);
-			}
-	function DisplayCancel() {
-		var content = document.getElementById("Cancel");
-			if (content.style.display === "block") {
-				content.style.display = "none";
-			} else {
-				content.style.display = "block";
-			}
-			}
-	function DisplayHelp() {
-		var content = document.getElementById("Help");
-			if (content.style.display === "block") {
-				content.style.display = "none";
-			} else {
-				content.style.display = "block";
-			}
-			}
-</script>
-  	</body>
+		<div>
+			<p>
+				Robert McEachron BIOS v3.14
+			</p>
+		</div>
+		<div>
+			#893-4302
+		</div>
+	</body>
+	<script>
+
+	</script>
 </html>
