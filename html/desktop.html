@@ -151,6 +151,12 @@
                         <div class="applicationText">About</div>
                     </div>
                 </div>
+                <div id="taskbarAppCV" class="taskbarApp" style="display: none;">
+                    <div style="display: flex;" onclick="minxMaxCV()">
+                        <div class="applicationIcon"><img src="../images/icons/paper.png" class="applicationIconImage"></div>
+                        <div class="applicationText">CV</div>
+                    </div>
+                </div>
     </div>
 
 
@@ -163,6 +169,7 @@
 
 
 <script>
+    // Start Button
     function showApplicationLauncher() {
         var x = document.getElementById("applicationLauncher");
         if (x.style.display === "none") {
@@ -171,6 +178,9 @@
             x.style.display = "none";
         }
     }
+
+
+    // About
     function showAbout() {
         var x = document.getElementById("aboutTab");
         var y = document.getElementById("taskbarAppAbout");
@@ -182,7 +192,6 @@
             y.style.display = "none";
         }
     }
-
     function minMaxAbout() {
         var x = document.getElementById("aboutTab");
         var y = document.getElementById("taskbarAppAbout");
@@ -195,29 +204,30 @@
         }
     }
 
-    function showPopupYoutube() {
-        var x = document.getElementById("popupYoutube");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-    function showPopupGithub() {
-        var x = document.getElementById("popupGithub");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
 
+    // CV
     function showCV() {
         var x = document.getElementById("cvTab");
+        var y = document.getElementById("taskbarAppCV");
         if (x.style.display === "none") {
             x.style.display = "block";
+            y.style.display = "block";
         } else {
             x.style.display = "none";
+            y.style.display = "none";
+        }
+    }
+    function minxMaxCV() {
+        var x = document.getElementById("cvTab");
+        var y = document.getElementById("taskbarAppCV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.backgroundColor = "#c3c3c3";
+            y.style.display = "block";
+        } else {
+            x.style.display = "none";
+            y.style.backgroundColor = "#959595";
+            y.style.display = "block";
         }
     }
 
@@ -248,7 +258,26 @@
         }
     }
 
+    // YouTube
+    function showPopupYoutube() {
+        var x = document.getElementById("popupYoutube");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    function showPopupGithub() {
+        var x = document.getElementById("popupGithub");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
 
+
+    // Drag Logic
     document.querySelectorAll(".tabContainer").forEach(dragElement);
     dragElement(document.getElementById("tabContainer"));
     function dragElement(elmnt) {
